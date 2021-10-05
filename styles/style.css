@@ -1,0 +1,165 @@
+:root{
+    --Scissors-Gradient:circle,  #ec9e0e, #eca922;
+    --Paper-Gradient:circle,  #4865f4, #5671f5;
+    --Rock-Gradient:circle,  #dc2e4e, #dd405d;
+    --Lizard-Gradient:circle,  #834fe3, #8c5de5;
+    --Cyan:90deg,  #40b9ce, #52bed1;
+    --Dark-Text: #3b4363;
+    --Score-Text: #2a46c0;
+    --Header-Outline: #606e85;
+    --Radial-Gradient: circle, #1f3756, #141539;
+    --Box-shadows: 0px 2px 5px 0px #0d0f1683;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+button{
+    font-size: 62.5%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: radial-gradient(var(--Radial-Gradient));
+}
+
+.main-score__container{
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--Header-Outline);
+    border-radius: 5px;
+}
+
+.main-game-title{
+    height: 60px;
+}
+
+.score-table__container{
+    width: 65px;
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: var(--Box-shadows);
+}
+
+.score-table__container h3{
+    color: var(--Score-Text);
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
+.score-table__container p{
+    color: var(--Dark-Text);
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.select-game__container{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 30px;
+
+    background: url(/images/bg-triangle.svg);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-game__playerBtn{
+    height: 110px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: inset 0px -5px 1px 0px #0d0f164b;
+}
+
+.main-game__playerBtn:hover{
+    filter: brightness(85%);
+}
+
+.main-game__playerBtn span{
+    display: block;
+    height: calc(100% - 25%);
+    width: calc(100% - 25%);
+    border-radius: 50%;
+    background: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45%;
+    box-shadow: inset 0px 5px 1px 0px #0d0f162d;
+}
+
+.rock{
+    grid-column: span 2;
+    justify-self: center;
+    background: radial-gradient(var(--Rock-Gradient));
+}
+
+.rock span{
+    background-image: url(/images/icon-rock.svg);
+}
+
+.paper{
+    background: radial-gradient(var(--Paper-Gradient));
+}
+
+.paper span{
+    background-image: url(/images/icon-paper.svg);
+}
+
+.scissors{
+    background: radial-gradient(var(--Scissors-Gradient));
+}
+
+.scissors span{
+    background-image: url(/images/icon-scissors.svg);
+}
+
+.main-rules__container{
+    margin: 20px auto;
+}
+
+.main-rules__btn{
+    padding: 8px 30px;
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    border: var(--Header-Outline) 3px solid;
+    border-radius: 10px;
+}

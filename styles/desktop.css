@@ -1,0 +1,25 @@
+.main-game-title{
+    height: 65px;
+}
+
+.score-table__container{
+    width: 70px;
+    height: 65px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: var(--Box-shadows);
+}
+
+.select-game__container{
+    background-size: 80%;
+    gap: 70px;
+}
+
+.main-game__playerBtn{
+    width: 150px;
+    height: 150px;
+}
