@@ -90,6 +90,7 @@ body{
 }
 
 .select-game__container{
+    width: 100%;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     gap: 30px;
@@ -110,11 +111,11 @@ body{
     box-shadow: inset 0px -5px 1px 0px #0d0f164b;
 }
 
-.main-game__playerBtn:hover{
+.main-game__playerBtn button:hover{
     filter: brightness(85%);
 }
 
-.main-game__playerBtn span{
+.main-game__playerBtn button{
     display: block;
     height: calc(100% - 25%);
     width: calc(100% - 25%);
@@ -124,6 +125,7 @@ body{
     background-position: center;
     background-size: 45%;
     box-shadow: inset 0px 5px 1px 0px #0d0f162d;
+    cursor: pointer;
 }
 
 .rock{
@@ -132,7 +134,7 @@ body{
     background: radial-gradient(var(--Rock-Gradient));
 }
 
-.rock span{
+.rock button{
     background-image: url(/images/icon-rock.svg);
 }
 
@@ -140,7 +142,7 @@ body{
     background: radial-gradient(var(--Paper-Gradient));
 }
 
-.paper span{
+.paper button{
     background-image: url(/images/icon-paper.svg);
 }
 
@@ -148,7 +150,7 @@ body{
     background: radial-gradient(var(--Scissors-Gradient));
 }
 
-.scissors span{
+.scissors button{
     background-image: url(/images/icon-scissors.svg);
 }
 
@@ -162,4 +164,89 @@ body{
     letter-spacing: 0.3rem;
     border: var(--Header-Outline) 3px solid;
     border-radius: 10px;
+}
+
+.game-playing__container{
+    display: none;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.game-controls__container{
+    grid-row: 2 / 3;
+    grid-column: span 2;
+}
+
+.game-selection{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+}
+
+.game-selection h3{
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+}
+
+.game-controls__container{
+    justify-self: center;
+}
+
+.game-controls__container h2{
+    font-size: 5rem;
+}
+
+.game-controls__container button{
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: var(--Dark-Text);
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-action{
+    width: 150px;
+    height: 150px;
+}
+
+.fadein{
+    animation: fadein 1s;
+}
+
+.fadeout{
+    animation: fadeout 2s;
+}
+
+
+
+@keyframes fadein {
+    0%{
+        transform: scale(1);
+    }
+    30%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes fadeout {
+    100%{
+        transform: scale(1);
+    }
+    30%{
+        opacity: 0;
+    }
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
 }

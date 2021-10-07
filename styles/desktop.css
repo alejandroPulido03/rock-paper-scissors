@@ -20,6 +20,28 @@
 }
 
 .main-game__playerBtn{
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
+}
+
+
+.game-playing__container{
+    grid-template: 1fr / 1fr 1fr 1fr;
+}
+
+.game-controls__container{
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.game-selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.btn-action{
+    width: 200px;
+    height: 200px;
 }

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width: 720px)">
+    <link rel="stylesheet" href="./styles/950.css" media="(min-width: 950px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -20,13 +21,25 @@
         </div>
     </div>
     <div class="main-game__container" id='gameZone'>
-        <template id="gameSelection">
-            <div class="select-game__container">
-                <button class="main-game__playerBtn paper"><span></span></button>
-                <button class="main-game__playerBtn scissors"><span></span></button>
-                <button class="main-game__playerBtn rock"><span></span></button>
+        <div class="select-game__container" id="goGame">
+            <span class="main-game__playerBtn paper"><button value="paper"></button></span>
+            <span class="main-game__playerBtn scissors"><button value="scissors"></button></span>
+            <span class="main-game__playerBtn rock"><button value="rock"></button></span>
+        </div>
+        <div class="game-playing__container" id="inGameScreen">
+            <div class="game-selection user">
+                <h3>You picked</h3>
+                <span class="main-game__playerBtn btn-action" id="userElection"><button></button></span>
             </div>
-        </template>
+            <div class="game-controls__container">
+                <h2>You win</h2>
+                <button id="playAgain">Play again</button>
+            </div>
+            <div class="game-selection pc">
+                <h3>The house picked</h3>
+                <span class="main-game__playerBtn btn-action"><button></button></span>
+            </div>
+        </div>
     </div>
     <div class="main-rules__container">
         <button class="main-rules__btn">Rules</button>
