@@ -17,7 +17,7 @@
         <img src="/images/logo.svg" alt="" class="main-game-title">
         <div class="score-table__container">
             <h3>Score</h3>
-            <p>0</p>
+            <p id="score">0</p>
         </div>
     </div>
     <div class="main-game__container" id='gameZone'>
@@ -29,15 +29,15 @@
         <div class="game-playing__container" id="inGameScreen">
             <div class="game-selection user">
                 <h3>You picked</h3>
-                <span class="main-game__playerBtn btn-action" id="userElection"><button></button></span>
+                <span class="main-game__playerBtn btn-action rock" id="userElection"><button></button></span>
             </div>
-            <div class="game-controls__container">
-                <h2>You win</h2>
+            <div class="game-controls__container" id="controls">
+                <h2 id="result"></h2>
                 <button id="playAgain">Play again</button>
             </div>
             <div class="game-selection pc">
                 <h3>The house picked</h3>
-                <span class="main-game__playerBtn btn-action"><button></button></span>
+                <span class="main-game__playerBtn btn-action rock" id="pcElection"><button></button></span>
             </div>
         </div>
     </div>
