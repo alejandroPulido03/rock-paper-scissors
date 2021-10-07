@@ -7,6 +7,9 @@ const pcElection = document.getElementById('pcElection');
 const scoreBoard = document.getElementById('score');
 const controls = document.getElementById('controls');
 const result = document.getElementById('result');
+const closeRules = document.getElementById('closeRules');
+const openRules = document.getElementById('openRules');
+const daRules = document.getElementById('daRules');
 
 const GameState = () =>{
     let score = 0;
@@ -39,28 +42,48 @@ class GameUserUI{
     constructor(election){
         this.election = election;
         this.results = {
-            0: 'Tie',
+            0: 'Tied match',
             1: 'You lose',
             2: 'You win'
         }
     }
     showUserElection(){
         if(this.election){
-        userElection.classList.remove(pcElection.classList[2])
+        userElection.classList.remove(pcElection.classList[3])
         userElection.classList.add(this.election)
+        userElection.classList.add('fadein');
         Game.changeScreenState()
         }
     }
     showPcElection(pcChoose){
-        pcElection.classList.remove(pcElection.classList[2]);
+        pcElection.classList.remove(pcElection.classList[3]);
         pcElection.classList.add(pcChoose);
+        pcElection.classList.add('pcfadein');
     }
     addPointBoard(points){
-        scoreBoard.innerText = Number(scoreBoard.innerText) + (points);
-        controls.style.visibility = 'visible'
+        scoreBoard.innerHTML = `<p class='resultsfadein'>${Number(scoreBoard.innerText) + (points)}</p>`;
+        controls.style.visibility = 'visible';
+        controls.classList.add('resultsfadein');
     }
     resultMatch(resultGame){
         result.innerText = this.results[resultGame]
+    }
+
+    highligthWinner(points){
+        if(points == 1){
+            userElection.style.boxShadow = '0 0 0 25px hsl(214deg 47% 23% / 80%), 0 0 0 45px hsl(214deg 47% 23% / 60%), 0 0 0 75px hsl(214deg 47% 23% / 40%)';
+            pcElection.style.boxShadow = '';
+            userElection.style.zIndex = '-1'
+            pcElection.style.zIndex = '0'
+        }else if(points == -1){
+            pcElection.style.boxShadow = '0 0 0 25px hsl(214deg 47% 23% / 80%), 0 0 0 45px hsl(214deg 47% 23% / 60%), 0 0 0 75px hsl(214deg 47% 23% / 40%)';
+            userElection.style.boxShadow = '';
+            pcElection.style.zIndex = '-1'
+            userElection.style.zIndex = '0'
+        }else{
+            userElection.style.boxShadow = '';
+            pcElection.style.boxShadow = '';
+        }
     }
 
     resetGame(){
@@ -101,6 +124,19 @@ goGame.addEventListener('click', e =>{
     Game.setScore(actualLogic.getResult(actualGame.election));
     actualGame.resultMatch(actualLogic.getResult(actualGame.election))
     actualGame.addPointBoard(Game.getScore());
+    actualGame.highligthWinner(Game.getScore())
 })
 
-playAgain.addEventListener('click', () => actualGame.resetGame())
+playAgain.addEventListener('click', () =>{
+    actualGame.resetGame()
+    goGame.style.animation = 'fadeinMain 500ms';
+})
+
+closeRules.addEventListener('click', ()=>{
+    daRules.style.display = 'none';
+})
+
+openRules.addEventListener('click', ()=>{
+    
+    daRules.style.display = 'grid';
+})

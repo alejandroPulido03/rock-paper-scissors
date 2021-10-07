@@ -45,3 +45,48 @@
     width: 200px;
     height: 200px;
 }
+
+.main-rules__container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-rules__btn{
+    margin: 0;
+}
+
+.rules-screen__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.425);
+}
+
+.rules-screen{
+    width: 450px;
+    height: 450px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+}
+
+.rules-screen h2{
+    grid-row: 1;
+    justify-self: left;
+    padding-left: 40px;
+
+}
+
+.rules-screen button{
+    grid-row: 1;
+    justify-self: right;
+    padding-right: 70px;
+}
+
+.rules-screen svg{
+    grid-column: span 2;
+    padding-bottom: 30px;
+}
